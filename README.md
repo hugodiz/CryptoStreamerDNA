@@ -3,7 +3,7 @@ Near-Time-Data crypto-currency streaming functions for Excel, powered by .NET vi
 
 ## Spec Summary:
 
-**=CryptoStream(Symbol, Metric):**    core function which implements the CryptoStreamerDNA functionality
+**=CryptoStream(Symbol, Metric) ::**core function which implements the CryptoStreamerDNA functionality
 
 When called from an Excel cell as =CryptoStream([Symbol], [Metric]) (eg. =CryptoStream("BNBBTC", "last_price")), it creates an approximately real-time data feed which will automatically refresh periodically without needing to explicitly recalculate Excel. 
 
@@ -16,7 +16,7 @@ The refresh rate is dynamically adjusted so as to be as high as it reasonably ca
 
 Note: the cooling routine **should not happen frequently**, although if it does happen recurrently, it means the code isn't being robust / restrictive enough in the damping mechanism, or it's being too ambitious in aiming for 75% of the maximum allowed weight. Right now this would require a tweak to the source code, which although relatively simple, is not ideal - ideally, I will include a Ribbon input to specify a desired preiodicity between requests, which although will not be allowed to be lower than what the RTD server deems sustainable, may be arbitrarily high (hence allowing arbitrarily slower pace for the functionality).
 
-**Streamer**   Excel Ribbon group which serves as the User Interface for CryptoStreamerDNA
+**Streamer ::** Excel Ribbon group which serves as the User Interface for CryptoStreamerDNA
 
 This Excel ribbon group contains 2 sections: 
 
