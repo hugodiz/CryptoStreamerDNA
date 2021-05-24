@@ -3,8 +3,8 @@ Near-Time-Data crypto-currency streaming functions for Excel, powered by .NET vi
 
 ## Spec Summary:
 
-**CryptoStream:** 
-(core function / handle for the functionality)
+**CryptoStream:** -> core function which implements the CryptoStreamerDNA functionality
+
 When called from an Excel cell as =CryptoStream([Symbol], [Metric]) (eg. =CryptoStream("BNBBTC", "last_price")), it creates an approximately real-time data feed which will automatically refresh periodically without needing to explicitly recalculate Excel. 
 
 The refresh rate is dynamically adjusted so as to be as high as it reasonably can without risking exceeding the API policies on Http request limits. Such limits are defined in terms of a maximum allowed 'request weight' limit per unit time (consecutively resetting after the unitary interval has passed). The RTD server which powers the Excel RTD feeds has a number of safety measures to ensure the API policies are never violated regardless of any end-user's Internet connection speed. These measures include:
@@ -14,9 +14,16 @@ The refresh rate is dynamically adjusted so as to be as high as it reasonably ca
 - A damping mechanism which progressively waits more between calls if despite the negative feedbackloop, weight usage is becoming close to the limit
 - A 'last resource' automatic cut-off -> cooling timer -> restart routine if, despite the measures above, the maximum allowed weight was (nearly) reached
 
+**Streamer** -> Excel Ribbon group which serves as the User Interface for CryptoStreamerDNA
 
+This Excel ribbon group contains 2 sections: 
 
-**UNPACK:** because LSDLOOKUP can optionally give back a match's coordinates in the lookup_array instead of the text itself, and because lookup_array is allowed to be 2D, we need a way to represent arrays in single cells (in this case containing a tuple [row index, column index]) - the convention we'll use is JSON. This function takes a JSON string representation of any 1D or 2D array(ie. [A(1), A(2), ..] or [[A(1,1), A(1,2), ..], [A(2,1), A(2,2), ..],..]) and produces an actual dynamic array from it (pieces of which can then be taken using the Excel built-in INDEX function). Note that 1D arrays are single rows (not columns) by convention.
+- a Doge button which controls On/Off switching of the streamer mechanism (this switch needs to be turned on **in addition** to CryptoStream() Excel feeds existing in the worksheet, in order for values to actually be streamed). The button also shows the overall status of the CryptoStreamerDNA, through various Doge status displays.
+
+- A telemetry box which, whenever things are actually being streamed, will show the key stats regading the data in-flow taking place; this includes request weight limit information obtained from the API, as well as currently used weight during this time interval, and the average time between requests (which is dinamically adjusted in order to always remain sustainable)
+
+**UNPACK:** 
+
 
 **TEXTSPLIT:** the inverse of the built-in Excel function TEXTJOIN. TEXTSPLIT takes a single (scalar input) string and returns a row containing each piece of the string, resulting from splitting the string according to a delimiter.
 
