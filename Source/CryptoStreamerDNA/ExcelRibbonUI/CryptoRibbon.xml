@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui" onLoad="OnLoad">
+  <ribbon>
+    <tabs>
+      <tab id="Streamer" label="Streamer">
+        <group id="CryptoSwitch">         
+          <button id="Toggler" getLabel="OnGetButtonLabel"
+             getImage="OnGetImage" size="large" onAction="OnPressMe" />         
+        </group>
+        <group id="TelemetryLabels">
+          <box id="TelemetryLabelsBox" boxStyle="vertical">
+            <labelControl id="WeightLimitLabel" getLabel="OnGetWeightLimitLabel"/>
+            <labelControl id="UsedWeightLabel" label="Currently Used Weight :"/>
+            <labelControl id="TimeBetweenRequestsLabel" label="Avg Time btw Requests :"/>
+          </box>
+        </group>
+        <group id="TelemetryValues">
+          <box id="TelemetryValuesBox" boxStyle="vertical">
+            <labelControl id="WeightLimitValue" getLabel="OnGetWeightLimitValue"/>
+            <labelControl id="UsedWeightValue" getLabel="OnGetUsedWeightValue"/>
+            <labelControl id="TimeBetweenRequestsValue" getLabel="OnGetTimeBetweenRequestsValue"/>
+          </box>
+        </group>
+      </tab>
+    </tabs>
+  </ribbon>
+</customUI>
