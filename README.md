@@ -3,9 +3,9 @@ Near-Time-Data crypto-currency streaming functions for Excel, powered by .NET vi
 
 ## Spec Summary:
 
-Core function / handle for the functionality
-
-**CryptoStream:** When called from an Excel cell as =CryptoStream([Symbol], [Metric]) (eg. =CryptoStream("BNBBTC", "last_price")), it creates an approximately real-time data feed which will automatically refresh periodically without needing to explicitly recalculate Excel. 
+**CryptoStream:** 
+(core function / handle for the functionality)
+When called from an Excel cell as =CryptoStream([Symbol], [Metric]) (eg. =CryptoStream("BNBBTC", "last_price")), it creates an approximately real-time data feed which will automatically refresh periodically without needing to explicitly recalculate Excel. 
 
 The refresh rate is dynamically adjusted so as to be as high as it reasonably can without risking exceeding the API policies on Http request limits. Such limits are defined in terms of a maximum allowed 'request weight' limit per unit time (consecutively resetting after the unitary interval has passed). The RTD server which powers the Excel RTD feeds has a number of safety measures to ensure the API policies are never violated regardless of any end-user's Internet connection speed. These measures include:
 
