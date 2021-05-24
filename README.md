@@ -3,7 +3,7 @@ Near-Time-Data crypto-currency streaming functions for Excel, powered by .NET vi
 
 ## Spec Summary:
 
-**=CryptoStream(Symbol, Metric) :: ** core function which implements the CryptoStreamerDNA functionality
+**=CryptoStream(Symbol, Metric):** core function which implements the CryptoStreamerDNA functionality
 
 When called from an Excel cell as =CryptoStream([Symbol], [Metric]) (eg. =CryptoStream("BNBBTC", "last_price")), it creates an approximately real-time data feed which will automatically refresh periodically without needing to explicitly recalculate Excel. 
 
