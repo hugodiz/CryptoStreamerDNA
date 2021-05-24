@@ -51,5 +51,5 @@ as a starting point.
 These functions are ideally meant to be used with Excel 365, because the 2 helper functions levarage the power of dynamic arrays.  
 However, the core function (CryptoStream) should give no problems in most Excel versions. Basically, you should be fine whenever one of these functions would return a scalar anyway (which CryptoStream does, anyway).
 
-Without dynamic arrays in your Excel version, I believe that, for CryptoSymbols() and CryptoMetrics(), you will need to pre-select a range of the right size, then use a TextUtilsDNA function normally, but trigger it with ctrl + shift + Enter instead of just Enter. Otherwise, Excel might just show you the upper-left corner of the result instead of the whole (array) result.  
+Without dynamic arrays in your Excel version, I believe that, for CryptoSymbols() and CryptoMetrics(), you will need to pre-select a range of the right size, then use the function normally, but trigger it with ctrl + shift + Enter instead of just Enter. Otherwise, Excel might just show you the upper-left corner of the result instead of the whole (array) result.  
 
