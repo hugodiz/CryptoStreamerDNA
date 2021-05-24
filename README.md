@@ -53,3 +53,41 @@ However, the core function (CryptoStream) should give no problems in most Excel 
 
 Without dynamic arrays in your Excel version, I believe that, for CryptoSymbols() and CryptoMetrics(), you will need to pre-select a range of the right size, then use the function normally, but trigger it with ctrl + shift + Enter instead of just Enter. Otherwise, Excel might just show you the upper-left corner of the result instead of the whole (array) result.  
 
+At the end of the day, if you can, you really should be using Excel 365, it's worth it.
+
+ExcelDNA will automatically produce 32 and 64-bit versions of the **xll** if you build the project in Visual Studio - you'll then use the appropriate one for your system (meaning, check the *bitness* of your Excel version). The above link to "ExcelDna - What and why" does a very good job of explaining what an **xll** is and how it relates to the other types of Excel add-ins available. From the end-user's point of view, an **xll** add-in is just something to be *added* to Excel, in a similar fashion to how you'd *add* a **xla** or **xlam** add-in.
+
+## Getting Started
+Documentation work in progress - but it's going to be pretty much the same process one would go through with any other **xll** add-in, in general, and any other ExcelDNA add-in, in particular.
+
+**Binary releases of CryptoStreamerDNA are hosted on GitHub:** [https://github.com/hugodiz/CryptoStreamerDNA/releases](https://github.com/hugodiz/CryptoStreamerDNA/releases)   
+
+In principle, downloading a copy of either the 32 or 64-bit CryptoStreamerDNA **xll** binary and having Excel ready go on your end, then adding the **xll** as an "Excel addin" in the Developer tab, is all one should need to do in order to get the functions up and running.
+
+As mentioned in the **Introduction**, there is a sister project to this one ([https://github.com/hugodiz/TextUtilsDNA]). That project is ideally suited as a first serious ExcelDNA project to study for those learning .NET with a VBA background. That project will contain a step-by-step consolidated guide on how to build an ExcelDNA project from scratch using Visual Studio. Everything in that guide will apply equally to TextUtilsDNA and CryptoStreamerDNA (work in progress). However, my instructions / guide won't preclude the need (or at least the very strong recommendation) that you have a look at the series of excellent YouTube tutorials by Govert on getting started with coding .NET functions for Excel via ExcelDNA:   
+[https://www.youtube.com/user/govertvd](https://www.youtube.com/user/govertvd)
+
+## Examples
+Documentation work in progress - in the meantime, the Spec Summary already details to a considerable degree how to use the functionality. This functionality is ideally suited for someone creating an Excel custom dashboard for viewing / managing the evolution of trading information of selected crypto symbols. In due time I'll upload an example of an Excel template which would sort of complement the functionality by effectively being a fully fledged UI for it. There's nothing special about such a 'template': it is simply any Excel workbook where you've built your own custom functions and macros, leveraging CryptoStream where appropriate.
+
+## Support and participation
+Any help or feedback is greatly appreciated, including ideas and coding efforts to fix, improve or expand this suite of functions, as well as any efforts of testing and probing, to make sure the functions are indeed 100% bug-free.
+
+Please log bugs and feature suggestions on the GitHub 'Issues' page.   
+
+Note in particular that, since this is all in an early stage, I expect we may find a few bugs in the CryptoStreamer. I expect that if one does find a bug, it will likely manifest in one of three likely ways:
+
+1. The CryptoStreamer keeps entering cooling down mode (which indicates I haven't been thorough enough in the code in order to avoid the streamer reaching that last resource)
+2. The CryptoStreamer UI enters a weird state with mixed elements from when it's supposed to be Off and supposed to be On (which should not be possible in principle).
+3. Excel crashes (either closes without warning or displays a fatal error message) - this is not dangerous but effectively means there's an unhandled exception in the code somewhere, which is a bug.
+
+## License
+The CryptoStreamerDNA VB.NET functionality is published under the standard MIT license, with the associated Excel integration relying on ExcelDNA (Zlib License):   
+[https://excel-dna.net](https://excel-dna.net)           
+[https://github.com/Excel-DNA/ExcelDna](https://github.com/Excel-DNA/ExcelDna)
+
+Hugo Diz
+
+hugodiz@gmail.com
+
+24 May 2021
