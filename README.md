@@ -1,2 +1,2 @@
 # CryptoStreamerDNA
-Near-Time-Data Crypto-Currency streaming functions for Excel, powered by .NET via ExcelDNA
+Near-Time-Data crypto-currency streaming functions for Excel, powered by .NET via ExcelDNA
