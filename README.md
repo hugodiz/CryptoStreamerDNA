@@ -22,7 +22,7 @@ This Excel ribbon group contains 2 sections:
 
 - a Doge button which controls On/Off switching of the streamer mechanism (this switch needs to be turned on **in addition** to CryptoStream() Excel feeds existing in the worksheet, in order for values to actually be streamed). The button also shows the overall status of the CryptoStreamerDNA, through various Doge status displays.
 
-- A telemetry box which, whenever things are actually being streamed, will show the key stats regading the data in-flow taking place; this includes request weight limit information obtained from the API, as well as currently used weight during this time interval, and the average time between requests (which is dinamically adjusted in order to always remain sustainable)
+- A telemetry box which, whenever things are actually being streamed, will show the key stats regarding the data transfers taking place; this includes request weight limit information obtained from the API, as well as currently-used weight during this time interval, and the average time between requests - which is dinamically adjusted in order to always remain sustainable.
 
 **=CryptoSymbols():** This helper Excel function takes no arguments, and when called in Excel (preferably in a free column), will produce a dynamic column array containing all valid cryptocurrency symbols that can be selected from in the CryptoStream function.
 
