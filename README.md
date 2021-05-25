@@ -29,7 +29,7 @@ This Excel ribbon group contains 2 sections:
 **=CryptoMetrics():** This helper Excel function also takes no arguments, and when called in Excel (preferably in a free column), will also produce a dynamic column array, this time containing all valid cryptocurrency metrics that can be selected from (for any given symbol) in the CryptoStream function.
 
 ## Introduction
-This hopefully useful Excel functionality for (approximately) Real-Time-Data streaming are fully written in VB.NET and plugged-in to Excel as an **xll** add-in. The functionality consists of a core Excel function (CryptoStream), 2 helper / documentation functions (CryptoSymbols, CryptoMetrics), and an Excel Ribbon group which serves as the main UI ("Streamer").
+This hopefully useful Excel functionality for near-time data streaming is fully written in VB.NET and plugged-in to Excel as an **xll** add-in. The functionality consists of a core Excel function (CryptoStream), 2 helper functions (CryptoSymbols, CryptoMetrics), and an Excel Ribbon group which serves as the main UI for the tool (ie. the "Streamer").
 
 These functions and the ribbon rely entirely on ExcelDNA (by Govert van Drimmelen) in order for them to be visible from within Excel.
 
