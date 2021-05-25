@@ -71,7 +71,7 @@ As mentioned in the **Introduction**, there is a sister project to this one ([ht
 Documentation work in progress - in the meantime, the Spec Summary already details to a considerable degree how to use the functionality. This functionality is ideally suited for someone creating an Excel custom dashboard for viewing / managing the evolution of trading information of selected crypto symbols. In due time I'll upload an example of an Excel template which would sort of complement the functionality by effectively being a fully fledged UI for it. There's nothing special about such a 'template': it is simply any Excel workbook where you've built your own custom functions and macros, leveraging CryptoStream where appropriate.
 
 ## Support and participation
-Any help or feedback is greatly appreciated, including ideas and coding efforts to fix, improve or expand this suite of functions, as well as any efforts of testing and probing, to make sure the functions are indeed 100% bug-free.
+Any help or feedback is greatly appreciated, including ideas and coding efforts to fix, improve or expand this functionality, as well as any efforts of testing and probing, to make sure the functions are indeed 100% bug-free.
 
 Please log bugs and feature suggestions on the GitHub 'Issues' page.   
 
