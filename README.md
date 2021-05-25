@@ -12,7 +12,7 @@ The refresh rate is dynamically adjusted so as to be as high as it reasonably ca
 - Automatic runtime reading and interpretation of API policy limits when the Excel session is first asked to connect
 - A negative feedback loop which imposes an artificial dynamic delay between requests, in order to steer the expected request weight usage to be around 75% of the maximum allowed
 - A damping mechanism which progressively waits more between calls if despite the negative feedback loop, weight usage is becoming close to the limit
-- A 'last resource' automatic cut-off -> cooling timer -> restart routine if, despite the measures above, the maximum allowed weight was (nearly) reached. 
+- A 'last resort' automatic cut-off -> cooling timer -> restart routine if, despite the measures above, the maximum allowed weight was (nearly) reached. 
 
 Note: the cooling routine **should not happen frequently**, although if it does happen recurrently, it means the code isn't being robust / restrictive enough in the damping mechanism, or it's being too ambitious in aiming for 75% of the maximum allowed weight. Right now this would require a tweak to the source code, which although relatively simple, is not ideal - ideally, I will include a Ribbon input to specify a desired peeiodicity between requests, which although will not be allowed to be lower than what the RTD server deems sustainable, may be arbitrarily high - hence allowing arbitrarily slower paces for the functionality.
 
@@ -77,7 +77,7 @@ Please log bugs and feature suggestions on the GitHub 'Issues' page.
 
 Note in particular that, since this is all in an early stage, I expect we may find a few bugs in the CryptoStreamer. I expect that if one does find a bug, it will likely manifest in one of three likely ways:
 
-1. The CryptoStreamer keeps entering cooling down mode (which indicates I haven't been thorough enough in the code in order to avoid the streamer reaching that last resource)
+1. The CryptoStreamer keeps entering cooling down mode (which indicates I haven't been thorough enough in the code in order to avoid the streamer reaching that last resort)
 2. The CryptoStreamer UI enters a weird state with mixed elements from when it's supposed to be Off and supposed to be On (which should not be possible in principle).
 3. Excel crashes (either closes without warning or displays a fatal error message) - this is not dangerous but effectively means there's an unhandled exception in the code somewhere, which is a bug.
 
