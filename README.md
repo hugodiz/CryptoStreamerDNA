@@ -1,5 +1,5 @@
 # CryptoStreamerDNA
-Open-source, Near-Time cryptocurrency data streaming Add-In for Excel, powered by .NET via ExcelDNA
+Near-Time cryptocurrency data streaming functionality for Excel, powered by .NET > ExcelDNA
 
 ## Spec Summary:
 
